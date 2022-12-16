@@ -14,16 +14,17 @@
 
 class Menu {
   constructor(menu) {
-    this.menuElement = document.querySelector(menu)
-    this.activeClass = 'active'
+    this.menuElement = document.querySelector(menu);
+    this.activeClass = 'active';
   }
   addActiveEvent() {
-    this.menuElement.addEventListener('click', function (event) {
-      event.target.classList.add(this.activeClass)
-    })
+    this.menuElement.addEventListener('click',  (event) => {
+      event.target.classList.add(this.activeClass);
+    console.log(this);
+
+    });
   }
 }
 
-const menu = new Menu ('.principal')
-menu.addActiveEvent()
-console.log(menu)
+const menu = new Menu('.principal');
+menu.addActiveEvent();
