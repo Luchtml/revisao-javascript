@@ -44,6 +44,11 @@
 
 // showList('Lucas', 'Joa', 'Thamires', 10)
 
-const numeros = [1,2,3,4,5,6,7,8,9]
+// const numeros = [1,2,3,4,5,6,7,8,9]
 
-console.log(Math.max(...numeros))
+// console.log(Math.max(...numeros))
+
+
+const carro = {cor: 'Azul', portas: 4, ano: 2020}
+
+const cloneCarro = {...carro, turbo: true}
