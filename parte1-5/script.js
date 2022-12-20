@@ -48,7 +48,21 @@
 
 // console.log(Math.max(...numeros))
 
+// const carro = {cor: 'Azul', portas: 4, ano: 2020}
 
-const carro = {cor: 'Azul', portas: 4, ano: 2020}
+// const cloneCarro = {...carro, turbo: true}
 
-const cloneCarro = {...carro, turbo: true}
+
+// import { areaQuadrado, perimetroQuadrado } from './quadrado.js';
+// import numeroAleatorio from './numeroAleatorio.js';
+// import Circulo from './circulo.js';
+
+// console.log(areaQuadrado(4));
+// console.log(perimetroQuadrado(5));
+
+// console.log(numeroAleatorio())
+
+
+// console.log(Circulo.area(5))
+// console.log(Circulo.circunferencia(5))
+// console.log(Circulo.aleatorio())
