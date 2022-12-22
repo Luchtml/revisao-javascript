@@ -8,6 +8,10 @@ class SmoothScroll {
     event.preventDefault()
     const href = event.currentTarget.getAttribute('href')
     const section = document.querySelector(href)
+    window.scrollTo({
+      top: section.offsetTop - (window.innerHeight - section.clientHeight) / 2, 
+      behavior: "smooth"
+    })
   }
 
   addClickEvent() {
@@ -17,6 +21,30 @@ class SmoothScroll {
   }
 }
 
-const scroll = new SmoothScroll("a[href^='#']");
+class ActiveSmoothScroll extends SmoothScroll {
+  constructor(links, sections) {
+    super(links)
 
-console.log(scroll.linkElements);
+    this.sectionElements = document.querySelectorAll(sections)
+    this.handleScroll = this.handleScroll.bind(this)
+    this.handleScroll()
+    this.activeNavScroll()
+  }
+
+  handleScroll(){
+    this.sectionElements.forEach((section, i) => {
+      if(window.pageYOffset > section.offsetTop - window.innerHeight * 0.5) {
+        this.linkElements[i].classList.add('active')
+      } else {
+        this.linkElements[i].classList.remove('active')
+      }
+    })
+  }
+
+  activeNavScroll() {
+    window.addEventListener('scroll', this.handleScroll)
+  }
+}
+const scroll = new ActiveSmoothScroll("a[href^='#']", "section");
+
+// console.log(scroll.linkElements);
